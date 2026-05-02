@@ -56,3 +56,19 @@ void posOrdem(No* raiz) {
         printf("%d ", raiz->valor);
     }
 }
+
+int altura(No* raiz) {
+    if (raiz == NULL)
+        return -1;
+    int altEsq = altura(raiz->esq);
+    int altDir = altura(raiz->dir);
+    return 1 + (altEsq > altDir ? altEsq : altDir);
+}
+
+void destruirArvore(No* raiz) {
+    if (raiz != NULL) {
+        destruirArvore(raiz->esq);
+        destruirArvore(raiz->dir);
+        free(raiz);
+    }
+}
