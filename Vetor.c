@@ -1,11 +1,17 @@
-#include "Vetor.h"
+#include "vetor.h"
 
 // Cria vetor de inteiros com capacidade para tamanho elementos.
 Vetor *vetorCriar(int tamanho) {
     Vetor *v = (Vetor *) malloc(sizeof(Vetor));
-    if (!v) { perror("malloc Vetor"); exit(EXIT_FAILURE); }
+    if (!v) { 
+        perror("malloc Vetor"); /*imprime a mensagem de erro do sistema*/
+        exit(EXIT_FAILURE); /*encerra o programa com código de erro*/
+    }
     v->dados = (int *) malloc(sizeof(int) * tamanho);
-    if (!v->dados) { perror("malloc dados"); exit(EXIT_FAILURE); }
+    if (!v->dados) { 
+        perror("malloc dados"); 
+        exit(EXIT_FAILURE); 
+    }
     v->tamanho = tamanho;
     return v;
 }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "arvorebinaria.h"
+#include "arvoreBinaria.h"
 
 // Inicializa um novo nó com o valor dado.
 No* criarNo(int valor) {

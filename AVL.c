@@ -1,4 +1,4 @@
-#include "AVL.h"
+#include "avl.h"
 
  // Fator de balanceamento (FB):
  // FB = altura(subárvore direita) - altura(subárvore esquerda)
