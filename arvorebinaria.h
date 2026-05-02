@@ -17,4 +17,6 @@ void emOrdem(No* raiz);
 void preOrdem(No* raiz);
 void posOrdem(No* raiz);
 int altura(No* raiz);
+void destruirArvore(No *raiz);
+
 #endif
