@@ -3,9 +3,9 @@
 #include <string.h>
 #include <time.h>
 
-#include "ArvoreBinaria.h"
-#include "AVL.h"
-#include "Vetor.h"
+#include "arvoreBinaria.h"
+#include "avl.h"
+#include "vetor.h"
 #include "metricas.h"
 
 /* ================================================================
@@ -15,6 +15,40 @@
 #define NUM_BUSCAS          30
 #define BUSCAS_PRESENTES    15     /* pelo menos 15 das 30 devem existir */
 #define NUM_ARVORES         10     /* questão 4 */
+
+/* ================================================================
+ * QUESTÃO 1 — Caminhamentos na BST (~20 elementos)
+ * ================================================================ */
+
+static void questao1(void) {
+    puts("========================================");
+    puts("QUESTAO 1 — Caminhamentos na BST");
+    puts("========================================");
+
+    int elementos[] = {50, 30, 70, 20, 40, 60, 80, 10, 25, 35,
+                       45, 55, 65, 75, 90, 15, 22, 32, 42, 85};
+    int n = (int)(sizeof(elementos) / sizeof(elementos[0]));
+
+    No *raiz = NULL;
+    for (int i = 0; i < n; i++)
+        raiz = inserir(raiz, elementos[i]);
+
+    printf("Altura da arvore: %d\n\n", altura(raiz));
+
+    printf("Pre-fixado  (raiz, esq, dir): ");
+    preOrdem(raiz);
+    puts("");
+
+    printf("Central     (esq, raiz, dir): ");
+    emOrdem(raiz);
+    puts("");
+
+    printf("Pos-fixado  (esq, dir, raiz): ");
+    posOrdem(raiz);
+    puts("");
+
+    destruirArvore(raiz);
+}
 
 /* ================================================================
  * QUESTÃO 2 — Simulação de recebimento de pacotes
@@ -320,39 +354,7 @@ static void questao4(void) {
     free(valores);
 }
 
-/* ================================================================
- * QUESTÃO 1 — Caminhamentos na BST (~20 elementos)
- * ================================================================ */
 
-static void questao1(void) {
-    puts("========================================");
-    puts("QUESTAO 1 — Caminhamentos na BST");
-    puts("========================================");
-
-    int elementos[] = {50, 30, 70, 20, 40, 60, 80, 10, 25, 35,
-                       45, 55, 65, 75, 90, 15, 22, 32, 42, 85};
-    int n = (int)(sizeof(elementos) / sizeof(elementos[0]));
-
-    No *raiz = NULL;
-    for (int i = 0; i < n; i++)
-        raiz = inserir(raiz, elementos[i]);
-
-    printf("Altura da arvore: %d\n\n", altura(raiz));
-
-    printf("Pre-fixado  (raiz, esq, dir): ");
-    preOrdem(raiz);
-    puts("");
-
-    printf("Central     (esq, raiz, dir): ");
-    emOrdem(raiz);
-    puts("");
-
-    printf("Pos-fixado  (esq, dir, raiz): ");
-    posOrdem(raiz);
-    puts("");
-
-    destruirArvore(raiz);
-}
 
 /* ================================================================
  * main

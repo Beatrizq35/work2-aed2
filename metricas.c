@@ -1,12 +1,14 @@
 #define _POSIX_C_SOURCE 200809L
 #include "metricas.h"
 
+// Retorna TEMPO atual em segundos com precisão de nanosegundos.
 double metricasAgora(void) {
     struct timespec ts;
     clock_gettime(CLOCK_MONOTONIC, &ts);
     return ts.tv_sec + ts.tv_nsec * 1e-9;
 }
 
+// Calcula a MÉDIA de um vetor de doubles de tamanho n.
 double metricasMedia(double *tempos, int n) {
     if (n <= 0) return 0.0;
     double soma = 0.0;
@@ -14,6 +16,7 @@ double metricasMedia(double *tempos, int n) {
     return soma / n;
 }
 
+// Imprime tabela simples: índice | tempo (s)
 void metricasImprimirTabela(const char *titulo,
                              double     *tempos,
                              int         n,

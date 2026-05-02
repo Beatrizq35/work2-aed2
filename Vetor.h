@@ -12,7 +12,8 @@ typedef struct {
 Vetor *vetorCriar(int tamanho);
 void   vetorDestruir(Vetor *v);
 void   vetorInserir(Vetor *v, int indice, int valor);
+void   vetorOrdenar(Vetor *v);                  /* qsort interno*/
 int    vetorBuscaBinaria(Vetor *v, int valor);  /* retorna índice ou -1 */
-void   vetorOrdenar(Vetor *v);                  /* qsort interno        */
 
-#endif /* VETOR_H */
+
+#endif
