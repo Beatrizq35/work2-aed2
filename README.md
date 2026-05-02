@@ -2,7 +2,7 @@
 
 Este projeto foi desenvolvido como parte da disciplina de Algoritmos e Estruturas de Dados 2. O objetivo principal é a implementação e análise comparativa de diferentes estruturas de dados para busca.
 
-## 📝 Descrição do Projeto
+## Descrição do Projeto
 
 O trabalho visa consolidar os conhecimentos sobre a estrutura de **árvores binárias**. Além da implementação dos algoritmos básicos, o projeto foca na comparação de desempenho entre:
 1. **Busca Binária em Vetores** (ordenados).
@@ -11,7 +11,7 @@ O trabalho visa consolidar os conhecimentos sobre a estrutura de **árvores bin�
 
 Toda a implementação foi desenvolvida seguindo os conceitos de **Tipos Abstratos de Dados (TADs)**, garantindo modularidade e encapsulamento do código.
 
-## 🚀 Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
 - [x] TAD Vetor com busca binária.
 - [x] TAD Árvore Binária de Pesquisa (Inserção, Remoção e Busca).
