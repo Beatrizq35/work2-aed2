@@ -6,7 +6,7 @@
 
 typedef struct NoAVL {
     int valor;
-    int altura;       // altura real do nó (folha = 0) 
+    int altura;       // altura real do nó (folha = 1) 
     struct NoAVL *esq;
     struct NoAVL *dir;
 } NoAVL;

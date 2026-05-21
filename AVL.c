@@ -7,9 +7,9 @@
 // Pega altura maior entre dois filhos (usado para atualizar altura do nó).
 static int max2(int a, int b) { return a > b ? a : b; }
 
-// Retorna a altura de uno nó (NULL tem altura -1, folha tem altura 0).
+// Retorna a altura de um nó (NULL tem altura 0, folha tem altura 1).
 static int alturaNo(NoAVL *n) {
-    return (n == NULL) ? -1 : n->altura;
+    return (n == NULL) ? 0 : n->altura;
 }
 
 // Recalcula a altura armazenada no nó a partir dos filhos.
@@ -29,7 +29,7 @@ static NoAVL *criarNoAVL(int valor) {
     NoAVL *novo = (NoAVL *) malloc(sizeof(NoAVL));
     if (!novo) { perror("malloc criarNoAVL"); exit(EXIT_FAILURE); }
     novo->valor  = valor;
-    novo->altura = 0;    /* folha tem altura 0 */
+    novo->altura = 1;    /* folha tem altura 1 */
     novo->esq    = NULL;
     novo->dir    = NULL;
     return novo;

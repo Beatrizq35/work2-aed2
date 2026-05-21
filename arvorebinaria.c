@@ -11,20 +11,22 @@ No* criarNo(int valor) {
     return novo;
 }
 
-// Insere um valor na BST recursivamente, retornando a nova raiz.
+// Insere um valor recursivamente, retornando a nova raiz.
 No* inserir(No* raiz, int valor) {
     if (raiz == NULL){
         return criarNo(valor);
     }
-    if (valor < raiz->valor)
+    if (valor <= raiz->valor) {
         raiz->esq = inserir(raiz->esq, valor);
-    else if (valor > raiz->valor)
+    }
+    else {
         raiz->dir = inserir(raiz->dir, valor);
+    }
 
     return raiz;
 }
 
-// Busca um valor na BST, retornando o nó ou NULL se não encontrado.
+// Busca um valor, retornando o nó ou NULL se não encontrado.
 No* buscar(No* raiz, int valor) {
     if (raiz == NULL || raiz->valor == valor)
         return raiz;
@@ -63,9 +65,10 @@ void posOrdem(No* raiz) {
 }
 
 // Calcula a altura da árvore (número de arestas no caminho mais longo até uma folha).
+// Considerando a raiz como altura 1, folhas como altura 1, e árvore vazia como 0.
 int altura(No* raiz) {
     if (raiz == NULL)
-        return -1;
+        return 0;
     int altEsq = altura(raiz->esq);
     int altDir = altura(raiz->dir);
     return 1 + (altEsq > altDir ? altEsq : altDir);

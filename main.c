@@ -62,7 +62,7 @@ typedef struct NoPacote {
     struct NoPacote *dir;
 } NoPacote;
 
-static NoPacote *pacoteCriar(int id, const char *dado) {
+static NoPacote * pacoteCriar(int id, const char *dado) {
     NoPacote *p = (NoPacote *) malloc(sizeof(NoPacote));
     if (!p) { perror("malloc NoPacote"); exit(EXIT_FAILURE); }
     p->id  = id;
@@ -141,7 +141,7 @@ static void questao2(void) {
             snprintf(dado, sizeof(dado), "RETRANSMISSAO do pacote %d", id);
         } else {
             id = ids[uniq++];
-            snprintf(dado, sizeof(dado), "Conteudo do fragmento %d", id);
+            snprintf(dado, sizeof(dado), "Conteudo do id %d", id);
         }
 
         printf("  [pos=%02d] Recebido pacote ID=%d  dado='%s'\n", pos, id, dado);
@@ -156,7 +156,6 @@ static void questao2(void) {
     else {
         pacoteMontarArquivo(arvore, f);
         fclose(f);
-        printf("\nArquivo montado gravado em: %s\n", nome_arquivo);
     }
 
     pacoteDestruir(arvore);
