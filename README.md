@@ -16,6 +16,7 @@ Toda a implementação foi desenvolvida seguindo os conceitos de **Tipos Abstrat
 - [x] TAD Vetor com busca binária.
 - [x] TAD Árvore Binária de Pesquisa (Inserção, Remoção e Busca).
 - [x] TAD Árvore AVL (Rotações simples e duplas para balanceamento).
+- [x] TAD para o Pacote
 - [x] Algoritmos de caminhamento (In-ordem, Pré-ordem, Pós-ordem).
 - [x] Módulo de medição de tempo para análise de desempenho.
 
@@ -24,8 +25,8 @@ Toda a implementação foi desenvolvida seguindo os conceitos de **Tipos Abstrat
 raiz do projeto (`work2-aed2/`) para executar o comando abaixo:
 
 ```bash
-gcc main.c arvoreBinaria.c avl.c metricas.c vetor.c -o programa
-./programa
+gcc main.c arvoreBinaria.c avl.c metricas.c vetor.c Pacote.c -o prog
+./prog
 ```
 
 ## Tecnologias Utilizadas
