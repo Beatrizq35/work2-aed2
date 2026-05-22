@@ -222,7 +222,7 @@ static void questao3(void) {
     int busca[NUM_BUSCAS];
     /* 15 valores presentes, 15 ausentes (negativos). */
     for (int i = 0; i < BUSCAS_PRESENTES; i++)
-        busca[i] = valores[i]; /* existem na estrutura */
+      busca[i] = valores[TAMANHO_GRANDE - 1 - i]; /* existem na estrutura */
     for (int i = BUSCAS_PRESENTES; i < NUM_BUSCAS; i++)
         busca[i] = -(i + 1);  /* não existem (negativos) */
 
